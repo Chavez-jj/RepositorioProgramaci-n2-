@@ -1,17 +1,28 @@
 package co.edu.uniquindio.TrabajoUno;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import co.edu.uniquindio.TrabajoUno.model.EmpresaTransporte;
+import co.edu.uniquindio.TrabajoUno.model.VehiculoTransporte;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        EmpresaTransporte empresa = new EmpresaTransporte("La Carreta");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        empresa.registrarPropietarioConVehiculoCarga();
+
+
+        VehiculoTransporte v1 = new VehiculoTransporte("ABC123", "2022", "Toyota", "Blanco", 40);
+        VehiculoTransporte v2 = new VehiculoTransporte("XYZ789", "2021", "Mercedes", "Azul", 50);
+        VehiculoTransporte v3 = new VehiculoTransporte("LMN456", "2023", "Chevrolet", "Rojo", 30);
+
+        v1.setPasajerosTransportados(120);
+        v2.setPasajerosTransportados(95);
+        v3.setPasajerosTransportados(150);
+
+        empresa.getVehiculoTransporteList().add(v1);
+        empresa.getVehiculoTransporteList().add(v2);
+        empresa.getVehiculoTransporteList().add(v3);
+
+
+        empresa.consultarPasajerosPorPlaca();
     }
 }
