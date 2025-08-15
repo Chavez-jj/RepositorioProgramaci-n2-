@@ -14,42 +14,33 @@ public class EmpresaTransporte {
     public EmpresaTransporte(String nombre) {
         this.nombre = nombre;
     }
-
     public String getNombre() {
         return nombre;
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public List<Propietario> getPropietarioList() {
         return propietarioList;
     }
-
     public void setPropietarioList(List<Propietario> propietarioList) {
         this.propietarioList = propietarioList;
     }
-
     public List<VehiculoCarga> getVehiculoCargaList() {
         return vehiculoCargaList;
     }
-
     public void setVehiculoCargaList(List<VehiculoCarga> vehiculoCargaList) {
         this.vehiculoCargaList = vehiculoCargaList;
     }
-
     public List<VehiculoTransporte> getVehiculoTransporteList() {
         return vehiculoTransporteList;
     }
-
     public void setVehiculoTransporteList(List<VehiculoTransporte> vehiculoTransporteList) {
         this.vehiculoTransporteList = vehiculoTransporteList;
     }
-
     public List<Usuario> getUsuarioList() {
         return usuarioList;
     }
-
     public void setUsuarioList(List<Usuario> usuarioList) {
         this.usuarioList = usuarioList;
     }
@@ -97,10 +88,10 @@ public class EmpresaTransporte {
         VehiculoCarga vehiculo = new VehiculoCarga(placa, modelo, marca, color, capacidadCarga, numeroEjes);
         vehiculoCargaList.add(vehiculo);
 
-
         JOptionPane.showMessageDialog(null, " Propietario y vehículo de carga registrados con éxito:\n" +
                 propietario + "\n" + vehiculo);
     }
+    
     public void consultarPasajerosPorPlaca() {
         String placaBuscada = JOptionPane.showInputDialog("Ingrese la placa del vehículo de pasajeros:");
         boolean encontrado = false;

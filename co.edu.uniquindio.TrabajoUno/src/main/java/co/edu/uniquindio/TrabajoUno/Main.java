@@ -5,13 +5,19 @@ import co.edu.uniquindio.TrabajoUno.model.VehiculoTransporte;
 
 public class Main {
     public static void main(String[] args) {
-        EmpresaTransporte empresa = new EmpresaTransporte("La Carreta");
+
+        EmpresaTransporte empresa = inicializarDatos();
 
         empresa.registrarPropietarioConVehiculoCarga();
 
+        empresa.consultarPasajerosPorPlaca();
 
-        VehiculoTransporte v1 = new VehiculoTransporte("ABC123", "2022", "Toyota", "Blanco", 40);
-        VehiculoTransporte v2 = new VehiculoTransporte("XYZ789", "2021", "Mercedes", "Azul", 50);
+    }
+    public static EmpresaTransporte inicializarDatos(){
+        EmpresaTransporte empresa = new EmpresaTransporte("La Carreta");
+
+        VehiculoTransporte v1 = new VehiculoTransporte("ABC123", "2050", "Toyota", "Blanco", 40);
+        VehiculoTransporte v2 = new VehiculoTransporte("XYZ789", "1600", "Mercedes", "Azul", 50);
         VehiculoTransporte v3 = new VehiculoTransporte("LMN456", "2023", "Chevrolet", "Rojo", 30);
 
         v1.setPasajerosTransportados(120);
@@ -23,6 +29,8 @@ public class Main {
         empresa.getVehiculoTransporteList().add(v3);
 
 
-        empresa.consultarPasajerosPorPlaca();
+
+
+        return empresa;
     }
 }

@@ -39,7 +39,7 @@ public class Propietario {
 
     @Override
     public String toString() {
-        return "Propietario { nombre = "+nombre+ ",cedula = "+cedula+ ",email = "+email+ ",celular = "+celular+ "}";
+        return "Propietario { nombre = "+nombre+ ", cedula = "+cedula+ ", email = "+email+ ", celular = "+celular+ "}";
     }
 }
 

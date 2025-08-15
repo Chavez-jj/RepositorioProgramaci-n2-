@@ -24,6 +24,6 @@ public class VehiculoTransporte extends Vehiculo {
 
     @Override
     public String toString() {
-        return super.toString() + " Propietario { capacidadCarga = "+maximoPasajeros+ ",pasajerosTransportados = "+pasajerosTransportados+ "}";
+        return super.toString() + " Propietario { capacidadCarga = "+maximoPasajeros+ ", pasajerosTransportados = "+pasajerosTransportados+ "}";
     }
 }

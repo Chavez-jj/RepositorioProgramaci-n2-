@@ -29,6 +29,6 @@ public class VehiculoCarga extends Vehiculo {
 
     @Override
     public String toString() {
-        return super.toString() + " VehiculoCarga { capacidadCarga = "+capacidadCarga+ ",numeroEjes = "+numeroEjes+ "}";
+        return super.toString() + " VehiculoCarga { capacidadCarga = "+capacidadCarga+ ", numeroEjes = "+numeroEjes+ "}";
     }
 }
