@@ -6,6 +6,9 @@ public class Vehiculo {
     private String marca;
     private String color;
 
+    public Vehiculo() {
+    }
+
     public Vehiculo(String placa, String modelo, String marca, String color) {
         this.placa = placa;
         this.modelo = modelo;
@@ -45,8 +48,21 @@ public class Vehiculo {
         this.color = color;
     }
 
+
+
+    public void encender(){
+        System.out.println("Encendiendo mi vehiculo");
+    }
+
     @Override
     public String toString() {
-        return "Vehiculo { placa = "  +placa+ ", modelo = "+modelo+ ", marca = "+marca+ ", color = "+color+ "}";
+        return "Vehiculo{" +
+                "placa='" + placa + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", marca='" + marca + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
+
 }
+
