@@ -33,6 +33,7 @@ public class EmpresaTransporte {
     // Lista propietarios con vehículos de carga que superan cierto peso
     public List<Propietario> listaPropietarioPeso(double peso){
         List<Propietario> propietarios = new ArrayList<>();
+        System.out.println(listaVehiculosCarga);
         for (VehiculoCarga vehiculo : listaVehiculosCarga) {
             if (vehiculo.getCapacidadCarga() >= peso ){
                 Propietario nPropietario = retornarPropietario(vehiculo.getPlaca());
@@ -66,12 +67,13 @@ public class EmpresaTransporte {
     }
 
     // Calcular pasajeros transportados en un vehículo por placa
-    public int calcularPasajerosPorPlaca(String placa, int pasajeros) {
+    public int calcularPasajerosPorPlaca(String placa) {
+        int pasajeros = 0;
         for (VehiculoPasajero vehiculo : listaVehiculosPasajeros) {
             if (vehiculo.getPlaca().equals(placa)) {
-                return pasajeros <= vehiculo.getNumeroMaximoPasajeros() ? pasajeros : vehiculo.getNumeroMaximoPasajeros();
+                pasajeros = vehiculo.getNumeroMaximoPasajeros();
             }
         }
-        return 0;
+        return pasajeros;
     }
 }

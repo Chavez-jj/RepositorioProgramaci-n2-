@@ -11,7 +11,10 @@ public class Main {
     public static void main(String[] args) {
         ModelFactory modelFactory = ModelFactory.getInstance();
         EmpresaTransporte empresaTransporte = modelFactory.inicializarDatos();
+        menu(empresaTransporte);
+    }
 
+    public static void menu (EmpresaTransporte empresaTransporte) {
         String menu = """
                 --- Menú Empresa Transporte ---
                 1. Crear propietario y vehículo de carga
@@ -22,7 +25,8 @@ public class Main {
                 """;
 
         int opcion;
-        do {
+        boolean centinela=true;
+        while(centinela){
             opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
             switch (opcion) {
                 case 1 -> {
@@ -45,8 +49,7 @@ public class Main {
                 }
                 case 2 -> {
                     String placa = JOptionPane.showInputDialog("Ingrese placa vehículo pasajeros:");
-                    int pasajeros = Integer.parseInt(JOptionPane.showInputDialog("Número de pasajeros transportados:"));
-                    int total = empresaTransporte.calcularPasajerosPorPlaca(placa, pasajeros);
+                    int total = empresaTransporte.calcularPasajerosPorPlaca(placa);
                     JOptionPane.showMessageDialog(null, "Total pasajeros registrados: " + total);
                 }
                 case 3 -> {
@@ -58,9 +61,12 @@ public class Main {
                     List<Propietario> propietarios = empresaTransporte.propietarioMayo();
                     JOptionPane.showMessageDialog(null, "Propietarios mayores de 40:\n" + propietarios);
                 }
-                case 0 -> JOptionPane.showMessageDialog(null, "Saliendo...");
+                case 0 -> {
+                    centinela = false;
+                    JOptionPane.showMessageDialog(null, "Saliendo...");
+                }
                 default -> JOptionPane.showMessageDialog(null, "Opción no válida.");
             }
-        } while (opcion != 0);
+        }
     }
 }

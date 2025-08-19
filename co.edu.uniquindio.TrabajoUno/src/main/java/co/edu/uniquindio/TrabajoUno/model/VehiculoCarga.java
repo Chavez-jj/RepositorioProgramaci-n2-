@@ -34,4 +34,12 @@ public class VehiculoCarga extends Vehiculo {
         System.out.println("Endenciendo el vehiculo para cargarlo");
     }
 
+    @Override
+    public String toString() {
+        return "VehiculoCarga{" +
+                "capacidadCarga='" + capacidadCarga + '\'' +
+                ", numeroEjes='" + numeroEjes + '\'' +
+                '}';
+    }
+
 }
