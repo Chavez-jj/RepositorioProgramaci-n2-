@@ -2,9 +2,12 @@ package co.edu.uniquindio.TrabajoUno.factory;
 
 import co.edu.uniquindio.TrabajoUno.model.*;
 
+import java.util.List;
+
 public class ModelFactory {
     private static ModelFactory instance;
     EmpresaTransporte empresaTransporte;
+
 
     private ModelFactory() {}
 
@@ -50,8 +53,23 @@ public class ModelFactory {
         return empresaTransporte;
     }
 
-    public propietarioMayor(){
-        
+    public void crearPropietarioVehiculoCarga(String nombre, String id, String email, String celular, int edad,
+                                              String placa, String modelo, String marca, String color, double capacidad, int ejes){
+        getEmpresaTransporte().crearPropietarioVehiculoCarga(nombre, id, email, celular, edad, placa, modelo, marca, color, capacidad, ejes);
     }
+
+    public int calcularPasajerosPorPlaca(String placa) {
+        return  getEmpresaTransporte().calcularPasajerosPorPlaca(placa);
+    }
+
+    public List<Propietario> listaPropietarioPeso(double peso) {
+        return getEmpresaTransporte().listaPropietarioPeso(peso);
+
+    }
+    public List<Propietario> propietarioMayo(){
+        return getEmpresaTransporte().propietarioMayo();
+    }
+
+
 }
 

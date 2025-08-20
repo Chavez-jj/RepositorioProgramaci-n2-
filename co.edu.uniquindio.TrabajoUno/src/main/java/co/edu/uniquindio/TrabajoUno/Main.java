@@ -11,10 +11,11 @@ public class Main {
     public static void main(String[] args) {
         ModelFactory modelFactory = ModelFactory.getInstance();
         EmpresaTransporte empresaTransporte = modelFactory.inicializarDatos();
-        menu(empresaTransporte);
+        menu(modelFactory);
     }
 
-    public static void menu (EmpresaTransporte empresaTransporte) {
+    public static void menu ( ModelFactory modelFactory) {
+
         String menu = """
                 --- Menú Empresa Transporte ---
                 1. Crear propietario y vehículo de carga
@@ -42,23 +43,23 @@ public class Main {
                     double capacidad = Double.parseDouble(JOptionPane.showInputDialog("Capacidad de carga:"));
                     int ejes = Integer.parseInt(JOptionPane.showInputDialog("Número de ejes:"));
 
-                    empresaTransporte.crearPropietarioVehiculoCarga(nombre, id, email, celular, edad,
+                    modelFactory.crearPropietarioVehiculoCarga(nombre, id, email, celular, edad,
                             placa, modelo, marca, color, capacidad, ejes);
 
                     JOptionPane.showMessageDialog(null, "Propietario y vehículo creados exitosamente.");
                 }
                 case 2 -> {
                     String placa = JOptionPane.showInputDialog("Ingrese placa vehículo pasajeros:");
-                    int total = empresaTransporte.calcularPasajerosPorPlaca(placa);
+                    int total = modelFactory.calcularPasajerosPorPlaca(placa);
                     JOptionPane.showMessageDialog(null, "Total pasajeros registrados: " + total);
                 }
                 case 3 -> {
                     double peso = Double.parseDouble(JOptionPane.showInputDialog("Ingrese peso límite:"));
-                    List<Propietario> propietarios = empresaTransporte.listaPropietarioPeso(peso);
+                    List<Propietario> propietarios = modelFactory.listaPropietarioPeso(peso);
                     JOptionPane.showMessageDialog(null, "Propietarios encontrados:\n" + propietarios);
                 }
                 case 4 -> {
-                    List<Propietario> propietarios = empresaTransporte.propietarioMayo();
+                    List<Propietario> propietarios = modelFactory.propietarioMayo();
                     JOptionPane.showMessageDialog(null, "Propietarios mayores de 40:\n" + propietarios);
                 }
                 case 0 -> {
